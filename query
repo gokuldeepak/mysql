@@ -1,5 +1,8 @@
+
 #To import data base from csv in mysql first create the table within the databse with the required data type
 #Importing tables as it is
+
+CREATE TABLE users (id INT NOT NULL AUTO_INCREMENT, first_name VARCHAR(255) NOT NULL, last_name VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, transactions INT NOT NULL, account_creation DATE NOT NULL, PRIMARY KEY (id));
 
 LOAD DATA LOCAL INFILE 
 '/filelocation/mock_data.csv' 
