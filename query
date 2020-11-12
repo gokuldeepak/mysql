@@ -1,0 +1,23 @@
+#To import data base from csv in mysql first create the table within the databse with the required data type
+#Importing tables as it is
+
+LOAD DATA LOCAL INFILE 
+'/filelocation/mock_data.csv' 
+INTO TABLE users 
+FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\n' 
+IGNORE 1 ROWS (id, first_name, last_name, email, transactions, @account_creation)
+SET account_creation  = STR_TO_DATE(@account_creation, '%m/%d/%y');
+
+
+# Importing Tables by changing the format of date
+
+LOAD DATA LOCAL INFILE 
+'/filelocation/mock_data.csv' 
+INTO TABLE users 
+FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\n' 
+IGNORE 1 ROWS (id, first_name, last_name, email, transactions, @account_creation)
+SET account_creation  = STR_TO_DATE(@account_creation, '%m/%d/%y');
+
+
